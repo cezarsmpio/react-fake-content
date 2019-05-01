@@ -143,3 +143,13 @@ A list of CSS properties to be added into the component.
 #### `as`: string - div
 
 Changes the component element to be rendered.
+
+## Browser support
+
+- Chrome :white_check_mark:
+- Firefox :white_check_mark:
+- Safari :white_check_mark:
+- Opera :white_check_mark:
+- Edge 15+ :white_check_mark:
+- iOS 9+ :white_check_mark:
+- Android 5+ :white_check_mark:
