@@ -12,6 +12,8 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/cezarlz/react-fake-content.svg)](https://GitHub.com/cezarlz/react-fake-content/graphs/contributors/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
+# :warning: UNDER DEVELOPMENT!
+
 ## Install
 
 ```

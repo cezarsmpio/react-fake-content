@@ -1,7 +1,7 @@
 {
   "name": "react-fake-content",
-  "version": "1.0.0",
-  "description": "react-fake-content React component",
+  "version": "0.0.1",
+  "description": "Simple and easy group of components using only CSS to generate content placeholder.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -30,10 +30,15 @@
     "react-dom": "^16.8.6"
   },
   "author": "Cezar Sampaio",
-  "homepage": "",
+  "homepage": "https://cezarsmpio.github.io/react-fake-content/",
   "license": "MIT",
   "repository": "",
   "keywords": [
-    "react-component"
+    "react-component",
+    "react",
+    "placeholder",
+    "content",
+    "dummy content",
+    "fake content"
   ]
 }
