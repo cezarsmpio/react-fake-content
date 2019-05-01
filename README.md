@@ -151,5 +151,8 @@ Changes the component element to be rendered.
 - Safari :white_check_mark:
 - Opera :white_check_mark:
 - Edge 15+ :white_check_mark:
+- IE11+ :white_check_mark:
 - iOS 9+ :white_check_mark:
 - Android 5+ :white_check_mark:
+
+Including animations!
