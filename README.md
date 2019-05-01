@@ -36,18 +36,106 @@ function Avatar(props) {
 
 ## Components
 
-### Rectangle
+### `<Rectangle />`
 
-Coming soon.
+```js
+import { Rectangle } from 'react-fake-content';
 
-### Circle
+function Component(props) {
+  return <Rectangle width="400px" height="250px" />;
+}
+```
 
-Coming soon.
+#### `width`: string - required
 
-### Line
+CSS unit to define the widht of the component.
 
-Coming soon.
+#### `height`: string - required
 
-### Square
+CSS unit to define the height of the component.
 
-Coming soon.
+### `<Circle />`
+
+```js
+import { Circle } from 'react-fake-content';
+
+function Component(props) {
+  return <Circle size="25px" />;
+}
+```
+
+#### `size`: string - 60px
+
+CSS unit to define either width and height of the component.
+
+### `<Line />`
+
+```js
+import { Line } from 'react-fake-content';
+
+function Component(props) {
+  return (
+    <CodeBlock>
+      <Line width="100%" height="12px" />
+      <Line width="95%" height="12px" />
+      <Line width="98%" height="12px" />
+      <Line width="100%" height="12px" />
+      <Line width="92%" height="12px" />
+    </CodeBlock>
+  );
+}
+```
+
+#### `width`: string - 100%
+
+CSS unit to define width of the component.
+
+#### `height`: string - 15px
+
+CSS unit to define height of the component.
+
+### `<Square />`
+
+```js
+import { Square } from 'react-fake-content';
+
+function Component(props) {
+  return <Square size="45px" />;
+}
+```
+
+#### `size`: string - 60px
+
+CSS unit to define either width and height of the component.
+
+## Properties
+
+All properties below are applicable for all components.
+
+#### `animation`: boolean - true
+
+`false` to disable animation.
+
+#### `animationDuration`: number - 1000
+
+Number in miliseconds.
+
+#### `animationName`: string - reactFakeContentAnimation
+
+CSS animation name.
+
+#### `primaryColor`: string - #efefef
+
+CSS unit to define the primary color of the component gradient.
+
+#### `secondaryColor`: string - #ddd
+
+CSS unit to define the secondary color of the component gradient.
+
+#### `style`: object - {}
+
+A list of CSS properties to be added into the component.
+
+#### `as`: string - div
+
+Changes the component element to be rendered.
