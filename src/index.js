@@ -1,8 +1,14 @@
 import React, { useLayoutEffect } from 'react';
 
+const cachedStyles = [];
+
 function useInjectStyle(rule) {
   useLayoutEffect(function() {
     try {
+      if (cachedStyles.includes(rule)) return;
+
+      cachedStyles.push(rule);
+
       const styleElement = document.createElement('style');
       styleElement.appendChild(document.createTextNode(''));
       styleElement.setAttribute('react-fake-content', '');
@@ -19,7 +25,7 @@ function useInjectStyle(rule) {
       };
     } catch (err) {
       console.error(
-        'An error happened on react-fake-content by trying to add stylesheet.'
+        'Error on react-fake-content by trying to add the following stylesheet rule:'
       );
       console.error(rule);
       console.error(err);
@@ -54,7 +60,7 @@ export function Rectangle({
   };
 
   if (animation) {
-    styles.animation = `${animationName} ${animationDuration}ms linear infinite running`;
+    styles.animation = `${animationName} ${animationDuration}ms linear infinite`;
   }
 
   return React.createElement(as, { ...props, style: styles });
