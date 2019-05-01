@@ -5,7 +5,7 @@ const cachedStyles = [];
 function useInjectStyle(rule) {
   useLayoutEffect(function() {
     try {
-      if (cachedStyles.includes(rule)) return;
+      if (cachedStyles.indexOf(rule) >= 0) return;
 
       cachedStyles.push(rule);
 
