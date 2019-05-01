@@ -7,9 +7,9 @@
 [![minified + gzip](https://badgen.net/bundlephobia/minzip/react-fake-content)](https://bundlephobia.com/result?p=react-fake-content)
 [![npm version](https://img.shields.io/npm/v/react-fake-content.svg)](https://www.npmjs.com/package/react-fake-content)
 [![npm download](https://img.shields.io/npm/dm/react-fake-content.svg)](https://www.npmjs.com/package/react-fake-content)
-[![GitHub stars](https://img.shields.io/github/stars/cezarlz/react-fake-content.svg?style=social&label=Star)](https://github.com/cezarlz/react-fake-content)
-[![GitHub issues](https://img.shields.io/github/issues/cezarlz/react-fake-content.svg)](https://github.com/cezarlz/react-fake-content/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/cezarlz/react-fake-content.svg)](https://GitHub.com/cezarlz/react-fake-content/graphs/contributors/)
+[![GitHub stars](https://img.shields.io/github/stars/cezarsmpio/react-fake-content.svg?style=social&label=Star)](https://github.com/cezarsmpio/react-fake-content)
+[![GitHub issues](https://img.shields.io/github/issues/cezarsmpio/react-fake-content.svg)](https://github.com/cezarsmpio/react-fake-content/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/cezarsmpio/react-fake-content.svg)](https://GitHub.com/cezarsmpio/react-fake-content/graphs/contributors/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 # :warning: UNDER DEVELOPMENT!
