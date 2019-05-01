@@ -28,8 +28,8 @@ function useInjectStyle(rule) {
 }
 
 export function Rectangle({
-  width = '100%',
-  height = '15px',
+  width,
+  height,
   animation = true,
   animationDuration = 1000,
   animationName = 'reactFakeContentAnimation',
@@ -39,12 +39,7 @@ export function Rectangle({
   as = 'div',
   ...props
 }) {
-  const keyframesRule = `
-      @keyframes ${animationName} {
-        from   { background-position: 0 center; }
-        to { background-position: -200% center; }
-      }
-      `;
+  const keyframesRule = `@keyframes ${animationName} { from { background-position: 0 center; } to { background-position: -200% center; } }`;
   useInjectStyle(keyframesRule);
 
   const styles = {
@@ -87,13 +82,12 @@ export function Line({ width = '100%', height = '15px', ...props }) {
       height={height}
       style={{
         margin: '10px 0',
-        borderRadius: '5px',
         ...props.style
       }}
     />
   );
 }
 
-export function Square(props) {
-  return <Rectangle {...props} width={props.size} height={props.size} />;
+export function Square({ size = '60px', ...props }) {
+  return <Rectangle {...props} width={size} height={size} />;
 }
