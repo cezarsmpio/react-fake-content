@@ -21,14 +21,15 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.8.x",
+    "react-dom": "16.8.x"
   },
   "devDependencies": {
     "nwb": "0.23.x",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "author": "",
+  "author": "Cezar Sampaio",
   "homepage": "",
   "license": "MIT",
   "repository": "",
