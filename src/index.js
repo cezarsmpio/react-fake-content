@@ -48,6 +48,7 @@ function Shape({
   const styles = {
     width,
     height,
+    display: 'inline-block',
     backgroundColor: primaryColor,
     backgroundImage: `linear-gradient(to right, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
     backgroundSize: '200%',
@@ -61,10 +62,6 @@ function Shape({
 
   if (responsive) {
     styles.maxWidth = '100%';
-  }
-
-  if (as) {
-    styles.display = 'block';
   }
 
   return React.createElement(as, { ...props, style: styles });
