@@ -26,6 +26,8 @@ npm install react-fake-content --save
 
 ## Usage
 
+👉 React 16.8+ is required. This library uses React Hooks.
+
 ```js
 import { Circle } from 'react-fake-content';
 
@@ -39,6 +41,8 @@ function Avatar(props) {
 ```
 
 ## Components
+
+✅ All components support server-side rendering!
 
 ### `<Rectangle />`
 
@@ -150,13 +154,13 @@ The component will adapt to its container size if the value is `true`. Otherwise
 
 ## Browser support
 
-- Chrome :white_check_mark:
-- Firefox :white_check_mark:
-- Safari :white_check_mark:
-- Opera :white_check_mark:
-- Edge 15+ :white_check_mark:
-- IE11+ :white_check_mark:
-- iOS 9+ :white_check_mark:
-- Android 5+ :white_check_mark:
+- Chrome ✅
+- Firefox ✅
+- Safari ✅
+- Opera ✅
+- Edge 15+ ✅
+- IE11+ ✅
+- iOS 9+ ✅
+- Android 5+ ✅
 
 Including animations!
