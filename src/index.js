@@ -40,6 +40,7 @@ function Shape({
   style = {},
   as = 'div',
   responsive = true,
+  inline = false,
   ...props
 }) {
   const keyframesRule = `@keyframes ${animationName} { from { background-position: 0 center; } to { background-position: -200% center; } }`;
@@ -48,7 +49,7 @@ function Shape({
   const styles = {
     width,
     height,
-    display: 'inline-block',
+    display: 'block',
     backgroundColor: primaryColor,
     backgroundImage: `linear-gradient(to right, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
     backgroundSize: '200%',
@@ -62,6 +63,10 @@ function Shape({
 
   if (responsive) {
     styles.maxWidth = '100%';
+  }
+
+  if (inline) {
+    styles.display = 'inline-block';
   }
 
   return React.createElement(as, { ...props, style: styles });

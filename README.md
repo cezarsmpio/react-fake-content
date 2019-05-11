@@ -152,6 +152,10 @@ Changes the component element to be rendered.
 
 The component will adapt to its container size if the value is `true`. Otherwise, it won't resize itself.
 
+#### `inline`: bool - false
+
+By default, all components are `block`. If you want them rendered as `inline-block`, use `inline={true}` or `style={{ display: 'inline-block' }}`.
+
 ## Browser support
 
 - Chrome ✅
