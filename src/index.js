@@ -15,17 +15,13 @@ function useInjectStyle(rule) {
 
       document.head.appendChild(styleElement);
 
-      const index = styleElement.sheet.insertRule(
+      styleElement.sheet.insertRule(
         rule,
         styleElement.sheet.cssRules.length
       );
-
-      return function() {
-        styleElement.sheet.deleteRule(index);
-      };
     } catch (err) {
       console.error(
-        'Error on react-fake-content by trying to add the following stylesheet rule:'
+        'Error on react-fake-content by trying to add styles into <head>:'
       );
       console.error(rule);
       console.error(err);
