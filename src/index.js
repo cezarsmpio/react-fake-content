@@ -43,15 +43,15 @@ export function Rectangle({
   secondaryColor = '#ddd',
   style = {},
   as = 'div',
+  responsive = true,
   ...props
 }) {
   const keyframesRule = `@keyframes ${animationName} { from { background-position: 0 center; } to { background-position: -200% center; } }`;
   useInjectStyle(keyframesRule);
 
   const styles = {
-    display: 'block',
-    maxWidth: width,
-    height: height,
+    width,
+    height,
     backgroundColor: primaryColor,
     backgroundImage: `linear-gradient(to right, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
     backgroundSize: '200%',
@@ -61,6 +61,14 @@ export function Rectangle({
 
   if (animation) {
     styles.animation = `${animationName} ${animationDuration}ms linear infinite`;
+  }
+
+  if (responsive) {
+    styles.maxWidth = '100%';
+  }
+
+  if (as) {
+    styles.display = 'block';
   }
 
   return React.createElement(as, { ...props, style: styles });
@@ -76,6 +84,7 @@ export function Circle({ size = '60px', ...props }) {
         borderRadius: '50%',
         ...props.style
       }}
+      responsive={false}
     />
   );
 }
