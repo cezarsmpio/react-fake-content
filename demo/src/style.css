@@ -22,3 +22,8 @@ section {
   margin: 50px 0;
   border-top: 1px solid #eee;
 }
+
+pre {
+  overflow: hidden;
+  overflow-x: scroll;
+}

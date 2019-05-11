@@ -12,6 +12,28 @@ class Demo extends Component {
         <h1>react-fake-content Demo</h1>
 
         <section>
+          <Rectangle width="500px" height="50px" />
+          <pre>
+            <code>
+              {`
+<Rectangle width="500px" height="50px" />
+            `}
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <Square size="80px" />
+          <pre>
+            <code>
+              {`
+<Square size="80px" />
+            `}
+            </code>
+          </pre>
+        </section>
+
+        <section>
           <Circle
             size="60px"
             primaryColor="blue"
@@ -55,28 +77,6 @@ class Demo extends Component {
 <Line width="90%" height="30px" />
 <Line />
 <Line />
-            `}
-            </code>
-          </pre>
-        </section>
-
-        <section>
-          <Square size="80px" />
-          <pre>
-            <code>
-              {`
-<Square size="80px" />
-            `}
-            </code>
-          </pre>
-        </section>
-
-        <section>
-          <Rectangle width="500px" height="50px" />
-          <pre>
-            <code>
-              {`
-<Rectangle width="500px" height="50px" />
             `}
             </code>
           </pre>
