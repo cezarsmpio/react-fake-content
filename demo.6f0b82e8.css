@@ -24,5 +24,10 @@ section {
   border-top: 1px solid #eee;
 }
 
+pre {
+  overflow: hidden;
+  overflow-x: scroll;
+}
 
-/*# sourceMappingURL=demo.cae1b7b2.css.map*/
+
+/*# sourceMappingURL=demo.6f0b82e8.css.map*/
