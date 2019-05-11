@@ -33,7 +33,7 @@ function useInjectStyle(rule) {
   }, []);
 }
 
-export function Rectangle({
+function Shape({
   width,
   height,
   animation = true,
@@ -76,7 +76,7 @@ export function Rectangle({
 
 export function Circle({ size = '60px', ...props }) {
   return (
-    <Rectangle
+    <Shape
       {...props}
       width={size}
       height={size}
@@ -91,7 +91,7 @@ export function Circle({ size = '60px', ...props }) {
 
 export function Line({ width = '100%', height = '15px', ...props }) {
   return (
-    <Rectangle
+    <Shape
       {...props}
       width={width}
       height={height}
@@ -104,5 +104,7 @@ export function Line({ width = '100%', height = '15px', ...props }) {
 }
 
 export function Square({ size = '60px', ...props }) {
-  return <Rectangle {...props} width={size} height={size} />;
+  return <Shape {...props} width={size} height={size} />;
 }
+
+export const Rectangle = Shape;
