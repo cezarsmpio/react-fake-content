@@ -144,6 +144,10 @@ A list of CSS properties to be added into the component.
 
 Changes the component element to be rendered.
 
+#### `responsive`: bool - true
+
+The component will adapt to its container size if the value is `true`. Otherwise, it won't resize itself.
+
 ## Browser support
 
 - Chrome :white_check_mark:
