@@ -12,8 +12,6 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/cezarsmpio/react-fake-content.svg)](https://GitHub.com/cezarsmpio/react-fake-content/graphs/contributors/)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-# :warning: UNDER DEVELOPMENT!
-
 ## Demo
 
 https://cezarsmpio.github.io/react-fake-content/

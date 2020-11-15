@@ -1,27 +1,27 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from "react";
 
 const cachedStyles = [];
 
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 function useInjectStyle(rule) {
-  useLayoutEffect(function() {
+  useIsomorphicLayoutEffect(function () {
     try {
       if (cachedStyles.indexOf(rule) >= 0) return;
 
       cachedStyles.push(rule);
 
-      const styleElement = document.createElement('style');
-      styleElement.appendChild(document.createTextNode(''));
-      styleElement.setAttribute('react-fake-content', '');
+      const styleElement = document.createElement("style");
+      styleElement.appendChild(document.createTextNode(""));
+      styleElement.setAttribute("react-fake-content", "");
 
       document.head.appendChild(styleElement);
 
-      styleElement.sheet.insertRule(
-        rule,
-        styleElement.sheet.cssRules.length
-      );
+      styleElement.sheet.insertRule(rule, styleElement.sheet.cssRules.length);
     } catch (err) {
       console.error(
-        'Error on react-fake-content by trying to add styles into <head>:'
+        "Error on react-fake-content by trying to add styles into <head>:"
       );
       console.error(rule);
       console.error(err);
@@ -34,11 +34,11 @@ function Shape({
   height,
   animation = true,
   animationDuration = 1000,
-  animationName = 'reactFakeContentAnimation',
-  primaryColor = '#efefef',
-  secondaryColor = '#ddd',
+  animationName = "reactFakeContentAnimation",
+  primaryColor = "#efefef",
+  secondaryColor = "#ddd",
   style = {},
-  as = 'div',
+  as = "div",
   responsive = true,
   inline = false,
   ...props
@@ -49,12 +49,12 @@ function Shape({
   const styles = {
     width,
     height,
-    display: 'block',
+    display: "block",
     backgroundColor: primaryColor,
     backgroundImage: `linear-gradient(to right, ${secondaryColor}, ${primaryColor}, ${secondaryColor})`,
-    backgroundSize: '200%',
-    borderRadius: '3px',
-    ...style
+    backgroundSize: "200%",
+    borderRadius: "3px",
+    ...style,
   };
 
   if (animation) {
@@ -62,46 +62,46 @@ function Shape({
   }
 
   if (responsive) {
-    styles.maxWidth = '100%';
+    styles.maxWidth = "100%";
   }
 
   if (inline) {
-    styles.display = 'inline-block';
+    styles.display = "inline-block";
   }
 
   return React.createElement(as, { ...props, style: styles });
 }
 
-export function Circle({ size = '60px', ...props }) {
+export function Circle({ size = "60px", ...props }) {
   return (
     <Shape
       {...props}
       width={size}
       height={size}
       style={{
-        borderRadius: '50%',
-        ...props.style
+        borderRadius: "50%",
+        ...props.style,
       }}
       responsive={false}
     />
   );
 }
 
-export function Line({ width = '100%', height = '15px', ...props }) {
+export function Line({ width = "100%", height = "15px", ...props }) {
   return (
     <Shape
       {...props}
       width={width}
       height={height}
       style={{
-        margin: '10px 0',
-        ...props.style
+        margin: "10px 0",
+        ...props.style,
       }}
     />
   );
 }
 
-export function Square({ size = '60px', ...props }) {
+export function Square({ size = "60px", ...props }) {
   return <Shape {...props} width={size} height={size} />;
 }
 
