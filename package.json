@@ -17,14 +17,13 @@
     "start": "nwb serve-react-demo",
     "deploy": "gh-pages -d demo/dist"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "react": "16.8.x",
-    "react-dom": "16.8.x"
+    "react": ">=16.8.x",
+    "react-dom": ">=16.8.x"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "nwb": "0.23.x",
+    "nwb": "^0.25.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
