@@ -1,7 +1,6 @@
-/coverage
-/demo/dist
-/es
-/lib
-/node_modules
-/umd
+coverage
+demo/dist
+node_modules
+dist
 npm-debug.log*
+.parcel-cache

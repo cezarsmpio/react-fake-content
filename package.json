@@ -1,31 +1,36 @@
 {
   "name": "react-fake-content",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Simple and easy group of components using only CSS to generate content placeholder.",
-  "main": "lib/index.js",
-  "module": "es/index.js",
+  "source": "src/index.tsx",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
+    "dist"
   ],
   "scripts": {
-    "build": "nwb build-react-component",
-    "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
-    "deploy": "gh-pages -d demo/dist"
+    "start": "parcel serve 'demo/src/index.html'",
+    "watch": "parcel watch",
+    "build": "parcel build"
   },
   "peerDependencies": {
     "react": ">=16.8.x",
     "react-dom": ">=16.8.x"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1",
+    "@parcel/packager-ts": "^2.5.0",
+    "@parcel/transformer-typescript-tsc": "^2.5.0",
+    "@parcel/transformer-typescript-types": "^2.5.0",
+    "@types/node": "^17.0.34",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
     "nwb": "^0.25.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "parcel": "^2.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.6.4"
   },
   "author": "Cezar Sampaio",
   "homepage": "https://cezarsmpio.github.io/react-fake-content/",
