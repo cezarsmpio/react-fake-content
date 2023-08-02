@@ -11,6 +11,7 @@ const Demo = () => {
       <h1>react-fake-content</h1>
 
       <section>
+        <h1>Rectangle</h1>
         <Rectangle width="500px" height="50px" />
         <pre>
           <code>
@@ -22,6 +23,7 @@ const Demo = () => {
       </section>
 
       <section>
+        <h1>Square</h1>
         <Square size="80px" />
         <pre>
           <code>
@@ -33,6 +35,8 @@ const Demo = () => {
       </section>
 
       <section>
+        <h1>Circle</h1>
+
         <Circle
           size="60px"
           primaryColor="blue"
@@ -54,6 +58,8 @@ animationDuration={700}
       </section>
 
       <section>
+        <h1>Animation disabled</h1>
+
         <Circle size="120px" animation={false} />
         <pre>
           <code>
@@ -65,6 +71,8 @@ animationDuration={700}
       </section>
 
       <section>
+        <h1>Line</h1>
+
         <Line />
         <Line width="90%" height="30px" />
         <Line />
@@ -82,6 +90,8 @@ animationDuration={700}
       </section>
 
       <section>
+        <h1>Custom styles & events</h1>
+
         <Rectangle
           width="500px"
           height="50px"
@@ -111,6 +121,8 @@ onClick={() => alert('Hey!')}
       </section>
 
       <section>
+        <h1>Polymorphic components (rendering as span)</h1>
+
         <Rectangle width="320px" height="100px" as="span" />
         <pre>
           <code>

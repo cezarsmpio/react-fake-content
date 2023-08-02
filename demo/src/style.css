@@ -23,6 +23,10 @@ section {
   border-top: 1px solid #eee;
 }
 
+h1 {
+  margin-bottom: 30px;
+}
+
 pre {
   overflow: hidden;
   overflow-x: scroll;

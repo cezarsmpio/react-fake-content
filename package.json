@@ -1,6 +1,6 @@
 {
   "name": "react-fake-content",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Simple and easy group of components using only CSS to generate content placeholder.",
   "source": "src/index.tsx",
   "main": "dist/index.cjs.js",

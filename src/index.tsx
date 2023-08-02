@@ -1,36 +1,7 @@
 import * as React from "react";
-import { PolymorphicComponentProps } from "./types";
+import "./animation.css";
 
-const cachedStyles = [];
-
-const useIsomorphicLayoutEffect =
-  typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
-
-function useInjectStyle(rule: string) {
-  useIsomorphicLayoutEffect(function () {
-    try {
-      if (cachedStyles.indexOf(rule) >= 0) return;
-
-      cachedStyles.push(rule);
-
-      const styleElement = document.createElement("style");
-      styleElement.appendChild(document.createTextNode(""));
-      styleElement.setAttribute("react-fake-content", "");
-
-      document.head.appendChild(styleElement);
-
-      styleElement.sheet.insertRule(rule, styleElement.sheet.cssRules.length);
-    } catch (err) {
-      console.error(
-        "Error on react-fake-content by trying to add styles into <head>:"
-      );
-      console.error(rule);
-      console.error(err);
-    }
-  }, []);
-}
-
-type Props<T extends React.ElementType> = {
+type Props = React.HTMLAttributes<HTMLAllCollection> & {
   width?: string;
   height?: string;
   animation?: boolean;
@@ -39,33 +10,25 @@ type Props<T extends React.ElementType> = {
   primaryColor?: string;
   secondaryColor?: string;
   style?: React.CSSProperties;
-  as?: T;
+  as?: React.ElementType;
   responsive?: boolean;
   inline?: boolean;
 };
 
-type ShapeProps<T extends React.ElementType> = PolymorphicComponentProps<
-  T,
-  Props<T>
->;
-
-export function Shape<T extends React.ElementType = "div">({
+export function Shape({
   width = "100px",
   height = "100px",
   animation = true,
   animationDuration = 1000,
   animationName = "reactFakeContentAnimation",
   primaryColor = "#efefef",
-  secondaryColor = "#ddd",
+  secondaryColor = "#dddddd",
   style = {},
-  as,
+  as = "div",
   responsive = true,
   inline = false,
   ...props
-}: ShapeProps<T>) {
-  const keyframesRule = `@keyframes ${animationName} { from { background-position: 0 center; } to { background-position: -200% center; } }`;
-  useInjectStyle(keyframesRule);
-
+}: Props) {
   const styles: React.CSSProperties = {
     width,
     height,
@@ -94,17 +57,11 @@ export function Shape<T extends React.ElementType = "div">({
   return <Component {...props} style={styles} />;
 }
 
-type CircleProps<T extends React.ElementType> = PolymorphicComponentProps<
-  T,
-  Props<T>
-> & {
+type CircleProps = Props & {
   size?: string;
 };
 
-export function Circle<T extends React.ElementType = "div">({
-  size = "60px",
-  ...props
-}: CircleProps<T>) {
+export function Circle({ size = "60px", ...props }: CircleProps) {
   return (
     <Shape
       {...props}
@@ -119,16 +76,9 @@ export function Circle<T extends React.ElementType = "div">({
   );
 }
 
-type LineProps<T extends React.ElementType> = PolymorphicComponentProps<
-  T,
-  Props<T>
->;
+type LineProps = Props;
 
-export function Line<T extends React.ElementType = "div">({
-  width = "100%",
-  height = "15px",
-  ...props
-}: LineProps<T>) {
+export function Line({ width = "100%", height = "15px", ...props }: LineProps) {
   return (
     <Shape
       {...props}
@@ -142,27 +92,16 @@ export function Line<T extends React.ElementType = "div">({
   );
 }
 
-type SquareProps<T extends React.ElementType> = PolymorphicComponentProps<
-  T,
-  Props<T>
-> & {
+type SquareProps = Props & {
   size?: string;
 };
 
-export function Square<T extends React.ElementType = "div">({
-  size = "60px",
-  ...props
-}: SquareProps<T>) {
+export function Square({ size = "60px", ...props }: SquareProps) {
   return <Shape {...props} width={size} height={size} />;
 }
 
-type RectangleProps<T extends React.ElementType> = PolymorphicComponentProps<
-  T,
-  Props<T>
->;
+type RectangleProps = Props;
 
-export function Rectangle<T extends React.ElementType = "div">(
-  props: RectangleProps<T>
-) {
+export function Rectangle(props: RectangleProps) {
   return <Shape {...props} />;
 }
